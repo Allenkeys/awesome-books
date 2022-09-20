@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20px;
+}
+
+label {
+    visibility: collapse;
+    display: block;
+}
+
+.form-input {
+    padding: 8px;
+}
+
+.form-btn {
+    display: block;
+    margin-top: 15px;
+    padding: 5px 12px;
+    text-transform: capitalize;
+}
