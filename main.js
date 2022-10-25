@@ -30,19 +30,18 @@ function displayBooks() {
   });
   /* eslint-disable no-use-before-define */
   removeBookFromCollection();
-  
 }
 function removeBookFromCollection() {
-    const removeBtn = document.querySelectorAll('.remove');
-    removeBtn.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        const id = e.target.getAttribute('data-id');
-        collections = collections.filter((el) => el.id !== Number(id));
-        addToLocalStorage(collections);
-        displayBooks();
-      });
+  const removeBtn = document.querySelectorAll('.remove');
+  removeBtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const id = e.target.getAttribute('data-id');
+      collections = collections.filter((el) => el.id !== Number(id));
+      addToLocalStorage(collections);
+      displayBooks();
     });
-  }
+  });
+}
 
 const form = document.getElementById('book-form');
 
