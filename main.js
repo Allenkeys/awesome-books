@@ -32,10 +32,10 @@ class Render {
     bookSection.replaceChildren();
     this.collections.forEach((book) => {
       const singleBook = document.createElement("div");
-      singleBook.innerHTML = `<div>${book.title}</div>
-        <div>${book.author}</div>
-        <button data-id=${book.id} class='remove'>Remove</button>
-        <hr>`;
+      singleBook.classList.add('book-container');
+      singleBook.innerHTML = `<div>"${book.title}" by</div>
+        <div class='author'> ${book.author}</div>
+        <button data-id=${book.id} class='remove'>Remove</button>`;
       bookSection.appendChild(singleBook);
     });
     Render.removeBookFromCollection();
