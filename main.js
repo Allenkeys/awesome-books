@@ -78,6 +78,28 @@ for (let i = 0; i < pop.length; i += 1) {
     pop[i].style.display = 'none';
   }
 }
+const title = document.querySelector('.title');
+const nav = document.querySelectorAll('.nav-item');
+
+const read = (e) => {
+  const target = e.target.innerText;
+  if (target === 'List') {
+    pop[0].style.display = 'block';
+    pop[1].style.display = 'none';
+    pop[2].style.display = 'none';
+    title.style.display = 'block';
+  } else if (target === 'Add New') {
+    pop[0].style.display = 'none';
+    pop[1].style.display = 'block';
+    pop[2].style.display = 'none';
+    title.style.display = 'none';
+  } else {
+    pop[0].style.display = 'none';
+    pop[1].style.display = 'none';
+    pop[2].style.display = 'block';
+    title.style.display = 'none';
+  }
+};
 
 nav.forEach((link) => {
   link.addEventListener('click', (e) => read(e));

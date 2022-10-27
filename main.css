@@ -38,6 +38,7 @@ nav ul {
   padding: 0 16px;
   text-transform: capitalize;
   border-right: 4px solid black;
+  cursor: pointer;
 }
 
 .nav-item:nth-child(3) {
