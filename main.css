@@ -58,7 +58,8 @@ label {
   padding-left: 10px;
 }
 
-.remove, .form-btn {
+.remove,
+.form-btn {
   display: block;
   padding: 8px 16px;
   border: 2px solid black;

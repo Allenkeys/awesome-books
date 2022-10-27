@@ -1,10 +1,7 @@
-function addToLocalStorage(data) {
-  return localStorage.setItem("books", JSON.stringify(data));
-}
+const addToLocalStorage = (data) =>
+  localStorage.setItem("books", JSON.stringify(data));
 
-function getFromLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key));
-}
+const getFromLocalStorage = (key) => JSON.parse(localStorage.getItem(key));
 
 class Book {
   constructor(title, author, id = Math.random()) {
@@ -15,12 +12,11 @@ class Book {
 }
 
 class Render {
-  collections = [];
+  static collections = [];
 
   static addBookToCollection(title, author) {
     const book = new Book(title, author);
     this.collections = this.collections.concat(book);
-    console.log(book);
     addToLocalStorage(this.collections);
     return this.collections;
   }
@@ -32,7 +28,7 @@ class Render {
     bookSection.replaceChildren();
     this.collections.forEach((book) => {
       const singleBook = document.createElement("div");
-      singleBook.classList.add('book-container');
+      singleBook.classList.add("book-container");
       singleBook.innerHTML = `<div>"${book.title}" by</div>
         <div class='author'> ${book.author}</div>
         <button data-id=${book.id} class='remove'>Remove</button>`;
@@ -67,7 +63,6 @@ form.addEventListener("submit", (e) => {
     return;
   }
   Render.addBookToCollection(title, author);
-  // addBookToCollection(title, author);
 
   Render.displayBooks();
   form.reset();
