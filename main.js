@@ -21,16 +21,22 @@ class Render {
     return this.collections;
   }
 
+  static template(book) {
+    return `<div> "${book.title}" by ${book.author} </div>
+    <button data-id=${book.id} class="remove">Remove</button>`;
+  }
+
   static displayBooks() {
     const getLocalData = getFromLocalStorage('books');
     this.collections = getLocalData;
     const bookSection = document.querySelector('.books-section');
     bookSection.replaceChildren();
+
     this.collections.forEach((book) => {
       const singleBook = document.createElement('div');
       singleBook.classList.add('book-container');
-      singleBook.innerHTML = `<div> "${book.title}" by ${book.author} </div>
-      <button data-id=${book.id} class="remove">Remove</button>`;
+
+      singleBook.innerHTML = Render.template(book);
       bookSection.appendChild(singleBook);
     });
     Render.removeBookFromCollection();
@@ -38,6 +44,7 @@ class Render {
 
   static removeBookFromCollection() {
     const removeBtn = document.querySelectorAll('.remove');
+
     removeBtn.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         const id = e.target.getAttribute('data-id');
