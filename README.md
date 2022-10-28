@@ -50,6 +50,12 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@jdgraay](https://twitter.com/jdgraay)
 - LinkedIn: [Eze Joshua](https://linkedin.com/in/eze-joshua)
 
+👤 **Kelvin Kiplimo**
+
+- GitHub: [@rikol137](https://github.com/rikol137)
+- Twitter: [@rikol137](https://twitter.com/rikol137)
+- LinkedIn: [Kelvin Kiplimo](https://linkedin.com/in/kelvin-Kiplimo)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
