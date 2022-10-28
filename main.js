@@ -31,11 +31,9 @@ class Render {
     this.collections = getLocalData;
     const bookSection = document.querySelector('.books-section');
     bookSection.replaceChildren();
-
     this.collections.forEach((book) => {
       const singleBook = document.createElement('div');
       singleBook.classList.add('book-container');
-
       singleBook.innerHTML = Render.template(book);
       bookSection.appendChild(singleBook);
     });
@@ -44,7 +42,6 @@ class Render {
 
   static removeBookFromCollection() {
     const removeBtn = document.querySelectorAll('.remove');
-
     removeBtn.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         const id = e.target.getAttribute('data-id');
